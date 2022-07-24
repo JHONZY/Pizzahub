@@ -1,0 +1,865 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;500&family=Edu+VIC+WA+NT+Beginner:wght@400;500&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&display=swap');
+
+*{
+    margin: auto;
+    padding: 0;
+    font-family: sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+.banner{
+    min-width: 20%;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(https://i.ytimg.com/vi/PCAwJs51D0k/maxresdefault.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    width: 100%;
+    padding: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar h2 img{
+    cursor: pointer;
+    width: 35%;
+    padding: 0;
+}
+.logo{
+    display: none;
+}
+h2{
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+}
+#pizz{
+    font-family: 'Open Sans', sans-serif;
+    background-color: orange;
+}
+nav ul li{
+    padding-top: 14%;
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+    padding-bottom: 20px;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: 15px;
+    transition: 0.3s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+}
+nav.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #191919;
+    justify-content: center;
+    display: flex;
+    padding: 2px;
+    transition: 0.4s ease-in-out;
+}
+nav.sticky img{
+    width: 20%;
+}
+nav.sticky .logo{
+    display: none;
+}
+nav.sticky h2{
+    font-size: 15px;
+}
+nav.sticky ul li{
+    font-size: 12px;
+    padding-top: 8.9%;
+}
+.content{
+    max-width: 50%;
+    padding-top: 25%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    left: 4%;
+}
+.content h1{
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-size: 45px;
+    margin-top: 80px;
+}
+.content p{
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-weight: bold;
+    margin: 10px auto;
+    font-weight: 100;
+    line-height: 25px;
+    font-size: 20px;
+    padding-bottom: 5%;
+}
+.content .cont{
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-weight: 100;
+    color: #F5F4F2;
+}
+.btn{
+    padding: 10px ;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color:  transparent;  
+    color: #fff;
+    cursor: pointer;  
+    text-decoration: none;
+    font-size: 12px;
+    transition: transform 0.6s;
+    border: 1px solid#009688 ;
+}
+.btn:hover{
+    transform: scale(1.1);
+    background-color: #009688;  
+    transition: 0.5s;
+}
+.col-2{
+    flex-basis: 25%;
+    min-width: 300px;
+}
+.col-2 img{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateY(-50%);
+    transition: bottom 1s, left 1s;
+}
+.col-2:hover .pizzas{
+    left: 45%;
+}
+
+
+/*---------menu-------------*
+.container{
+    background: #191919;
+    padding-bottom: 90px;
+}
+.title-pizza{
+    text-align: center;
+    padding: 50px;
+}
+.title-pizza h2{
+
+    color: #fff;
+}
+.hi-slide {
+    position: relative; 
+    width: 754px; height: 292px; 
+    margin: 150px auto 0; 
+}
+            
+.hi-slide .hi-next,
+.hi-slide .hi-prev { 
+    position: absolute;
+    top: 50%; 
+    width: 40px;
+    height: 40px; 
+    margin-top: -20px;     
+    border-radius: 50px; 
+                 
+    line-height: 40px;
+    text-align: center; 
+    cursor: pointer;
+    background-color: #fff; 
+    color: black;               
+    transition: all 0.6s;
+    font-size: 20px; 
+    font-weight: bold;
+}
+
+.hi-slide .hi-next:hover, 
+.hi-slide .hi-prev:hover {
+    opacity: 1; 
+    background-color: #fff;  
+}
+            
+.hi-slide .hi-prev {
+     left: -50px; 
+}
+            
+.hi-slide .hi-prev::before {
+     content: '<'; 
+}
+.hi-slide .hi-next {
+     right: -80px; 
+}
+.hi-slide .hi-next::before {
+     content: '>'; 
+}
+    
+.hi-slide > ul { 
+    list-style: none; 
+    position: relative;
+    width: 754px; 
+    height: 292px; 
+    margin: 0;
+    padding: 0;
+}
+            
+            
+.hi-slide > ul > li {
+    overflow: hidden; 
+    position: absolute; 
+    z-index: 0; 
+    left: 377px;
+    top: 146px; 
+    width: 0; 
+    height: 0; 
+    margin: 0; 
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid #fff;     
+    border-radius: 20px;         
+    background-color: #333; 
+    cursor: pointer; }
+            
+.hi-slide > ul > li > .imgbox img {
+     width: 100%; 
+     background-position: center;
+     border-radius: 50%;
+     border: 3px solid #fff;
+}
+.hi-slide > ul > li > .imgbox h4{
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+
+/*-----------about-----------*/
+.about{
+    min-width: 15%;
+    text-align: center;
+    padding: 65px 0;
+    justify-content: center;
+    font-weight: 900;
+}
+.about h4 #pizzax{
+    background-color: none;
+    color: violet;
+    font-weight: 200;
+}
+.about h4{
+    font-size: 35px;
+}
+.about p{
+    padding: 50px;
+    justify-content: space-between;
+    letter-spacing: 3px;
+    line-height: 35px;
+    word-spacing: 1px;
+}
+
+/*------------contact-------------*/
+.contact{
+    min-width: 15%;
+    text-align: center;
+    justify-content: center;
+    padding: 65px;
+    font-weight: 900;
+}
+.contact h5{
+    font-size: 35px;
+}
+.contact h5 #pizzax{
+    color: violet;
+    font-weight: 400;
+}
+
+/*------footer-------*/
+footer{
+    padding: 5px;
+    background-color: #101010;
+    font-weight: 200;
+    padding-left: 20px;
+}
+
+.outer-footer p{
+    text-transform: uppercase;
+    bottom: 0;
+    font-size: 10px;
+    color: white;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.arrow{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-40%, -40%);
+}
+.arrow .arow{
+    display: flex;
+    width: 20px;
+    height: 20px;
+    border-bottom: 4px solid violet;
+    border-right: 4px solid violet;
+    transform: rotate(45deg);
+    margin: -5px;
+    animation: scroll 2s infinite;
+}
+.arrow .arow:nth-child(2){
+    animation-delay: -.2s;
+}
+
+.arrow .arow:nth-child(3){
+    animation-delay: -.4s;
+}
+
+@keyframes scroll{
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+@media only screen and (max-width: 555px) {
+    .content{
+        flex-direction: column;
+    }
+    .content h1{
+        font-family: 'Edu NSW ACT Foundation', cursive;
+        font-size: 35px;
+        margin-top: 80px;
+    }
+    .content p{
+        font-family: 'Edu VIC WA NT Beginner', cursive;
+        font-weight: bold;
+        margin: 10px auto;
+        font-weight: 100;
+        line-height: 25px;
+        font-size: 19px;
+        padding-bottom: 5%;
+    }
+    .col-2 img{
+        width: 45%;
+        position: absolute;
+        left: 53%;
+        bottom: 0;
+        transform: translateY(-53%);
+        transition: bottom 1s, left 1s;
+    }
+    .navbar h2 img{
+        cursor: pointer;
+        width: 35%;
+        padding: 0;
+    }
+    h2{
+        font-family: 'Open Sans', sans-serif;
+        color: #fff;
+    }
+    .navbar ul li a{
+        padding-top: 14%;
+        list-style: none;
+        display: inline-block;
+        position: relative;
+        font-size: 10px;
+    
+    }
+}
+
+@media only screen and (max-width: 481px) {
+    .content{
+        text-align: center;
+        justify-content: center;
+        left: 25%;
+        padding: 0;
+        margin: 0;
+    }
+    .content h1{
+        font-family: 'Edu NSW ACT Foundation', cursive;
+        font-size: 30px;
+        margin-top: 45px;
+    }
+    .content p{
+        font-family: 'Edu VIC WA NT Beginner', cursive;
+        font-weight: bold;
+        margin: 10px auto;
+        font-weight: 100;
+        line-height: 25px;
+        font-size: 12px;
+        padding-bottom: 10%;
+    }
+    .col-2 img{
+        display: none;
+    }
+    .col-2:hover .pizzas{
+        transition: 0.4s;
+    }
+    .navbar h2 img{
+        cursor: pointer;
+        width: 19%;
+        padding: 0;
+    }
+    h2{
+        font-size: 15px;
+        font-family: 'Open Sans', sans-serif;
+        color: #fff;
+    }
+    .navbar ul li a{
+        padding-top: 14%;
+        list-style: none;
+        display: inline-block;
+        position: relative;
+        font-size: 8px;
+    
+    }
+    .arrow{
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        transform: translate(-40%, -40%);
+    }
+    .arrow .arow{
+        display: flex;
+        width: 10px;
+        height: 10px;
+        border-bottom: 3px solid violet;
+        border-right: 3px solid violet;
+        transform: rotate(45deg);
+        margin: -5px;
+        animation: scroll 2s infinite;
+    }
+}
+
+@media only screen and (max-width: 431px) {
+    nav.sticky .logo{
+        width: 12%;
+    }
+    .logo{
+        display: block;
+    }
+
+    h2{
+        display: none;
+    }
+
+    .content{
+        text-align: center;
+        justify-content: center;
+        left: 25%;
+        padding: 0;
+        margin: 0;
+    }
+    .content h1{
+        font-family: 'Edu NSW ACT Foundation', cursive;
+        font-size: 25px;
+        margin-top: 45px;
+    }
+    .content p{
+        font-family: 'Edu VIC WA NT Beginner', cursive;
+        font-weight: bold;
+        margin: 10px auto;
+        font-weight: 100;
+        line-height: 30px;
+        font-size: 10px;
+        padding-bottom: 10%;
+    }
+    .navbar h2 img{
+        cursor: pointer;
+        width: 20%;
+        padding: 0;
+    }
+    h2{
+        font-size: 8px;
+        font-family: 'Open Sans', sans-serif;
+        color: #fff;
+    }
+    .navbar ul li a{
+        padding-top: 14%;
+        list-style: none;
+        display: inline-block;
+        position: relative;
+        font-size: 8px;
+    
+    }
+    .arrow{
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        transform: translate(-40%, -40%);
+    }
+    .arrow .arow{
+        display: flex;
+        width: 10px;
+        height: 10px;
+        border-bottom: 3px solid violet;
+        border-right: 3px solid violet;
+        transform: rotate(45deg);
+        margin: -5px;
+        animation: scroll 2s infinite;
+    }
+}
+
+@media only screen and (max-width: 423px) {
+    .content{
+        text-align: center;
+        justify-content: center;
+        left: 25%;
+        padding: 0;
+        margin: 0;
+    }
+    .content h1{
+        font-family: 'Edu NSW ACT Foundation', cursive;
+        font-size: 25px;
+        margin-top: 45px;
+    }
+    .content p{
+        font-family: 'Edu VIC WA NT Beginner', cursive;
+        font-weight: bold;
+        margin: 10px auto;
+        font-weight: 100;
+        line-height: 25px;
+        font-size: 8px;
+        padding-bottom: 10%;
+    }
+    .navbar h2 img{
+        cursor: pointer;
+        width: 20%;
+        padding: 0;
+    }
+    h2{
+        font-size: 10px;
+        font-family: 'Open Sans', sans-serif;
+        color: #fff;
+    }
+    .navbar ul li a{
+        padding-top: 14%;
+        list-style: none;
+        display: inline-block;
+        position: relative;
+        font-size: 8px;
+    
+    }
+
+    .about h4{
+        font-size: 30px;
+    }
+    .about p{
+        justify-content: space-between;
+        letter-spacing: 2px;
+        line-height: 35px;
+        word-spacing: 1px;
+        font-size: 12px;
+    }
+    .contact h5{
+        font-size: 20px;
+    }
+
+    .arrow{
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        transform: translate(-40%, -40%);
+    }
+    .arrow .arow{
+        display: flex;
+        width: 10px;
+        height: 10px;
+        border-bottom: 3px solid violet;
+        border-right: 3px solid violet;
+        transform: rotate(45deg);
+        margin: -5px;
+        animation: scroll 2s infinite;
+    }
+    .outer-footer p{
+        text-transform: uppercase;
+        bottom: 0;
+        font-size: 7px;
+        color: white;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+    }
+}
+
+@media only screen and (max-width: 393px) {
+    .content{
+        left: 4%;
+        top: 80%;
+    }
+    .content h1{
+        font-family: 'Edu NSW ACT Foundation', cursive;
+        font-weight: 100;
+    }
+    .content p{
+        display: none;
+    }
+    .navbar h2 img{
+        cursor: pointer;
+        width: 18%;
+        padding: 0;
+    }
+    h2{
+        font-size: 9px;
+        font-family: 'Open Sans', sans-serif;
+        color: #fff;
+    }
+    .navbar ul li a{
+        padding-top: 14%;
+        list-style: none;
+        display: inline-block;
+        position: relative;
+        font-size: 8px;
+    
+    }
+    .content h1{
+        font-family: 'Edu NSW ACT Foundation', cursive;
+        font-size: 20px;
+        margin-top: 80px;
+    }
+    .content p{
+        font-family: 'Edu VIC WA NT Beginner', cursive;
+        font-weight: bold;
+        margin: 10px auto;
+        font-weight: 100;
+        line-height: 25px;
+        font-size: 14px;
+        padding-bottom: 5%;
+    }
+
+    
+    .about h4{
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+    .about p{
+        padding: 10px;
+        justify-content: space-between;
+        letter-spacing: 1px;
+        line-height: 30px;
+        word-spacing: 1px;
+        font-size: 10px;
+    }
+    .contact h5{
+        font-size: 20px;
+    }
+
+
+    .arrow{
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        transform: translate(-40%, -40%);
+    }
+    .arrow .arow{
+        display: flex;
+        width: 10px;
+        height: 10px;
+        border-bottom: 3px solid violet;
+        border-right: 3px solid violet;
+        transform: rotate(45deg);
+        margin: -5px;
+        animation: scroll 2s infinite;
+    }
+    .outer-footer p{
+        text-transform: uppercase;
+        bottom: 0;
+        font-size: 7px;
+        color: white;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+    }
+}
+
+@media only screen and (max-width: 367px) {
+    nav.sticky .logo{
+        width: 12%;
+    }
+    .navbar ul li a{
+        padding-top: 14%;
+        list-style: none;
+        display: inline-block;
+        position: relative;
+        font-size: 8px;
+    
+    }
+    .content h1{
+        font-family: 'Edu NSW ACT Foundation', cursive;
+        font-size: 20px;
+        margin-top: 80px;
+    }
+    .content p{
+        font-family: 'Edu VIC WA NT Beginner', cursive;
+        font-weight: bold;
+        margin: 10px auto;
+        font-weight: 100;
+        line-height: 25px;
+        font-size: 14px;
+        padding-bottom: 5%;
+    }
+    .col-2 img{
+        width: 50%;
+        position: absolute;
+        left: 20%;
+        top: 90%;
+        bottom: 0;
+        transform: translateY(-50%);
+        transition: bottom 1s, left 1s;
+    }
+    .col-2:hover .pizzas{
+        top: 80%;
+        left: 10%;
+    }
+
+    
+    .about h4{
+        font-size: 30px;
+        padding-bottom: 20px;
+    }
+    .about p{
+        padding: 10px;
+        justify-content: space-between;
+        letter-spacing: 1px;
+        line-height: 30px;
+        word-spacing: 1px;
+        font-size: 9px;
+    }
+    .contact h5{
+        font-size: 20px;
+    }
+
+    .arrow{
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        transform: translate(-40%, -40%);
+    }
+    .arrow .arow{
+        display: flex;
+        width: 10px;
+        height: 10px;
+        border-bottom: 3px solid violet;
+        border-right: 3px solid violet;
+        transform: rotate(45deg);
+        margin: -5px;
+        animation: scroll 2s infinite;
+    }
+    .outer-footer p{
+        text-transform: uppercase;
+        bottom: 0;
+        font-size: 7px;
+        color: white;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+    }
+}
+
+@media only screen and (max-width: 353px) {
+    nav.sticky .logo{
+        width: 10%;
+    }
+    .navbar ul li a{
+        padding-top: 14%;
+        list-style: none;
+        display: inline-block;
+        position: relative;
+        font-size: 8px;
+    
+    }
+    .content h1{
+        font-family: 'Edu NSW ACT Foundation', cursive;
+        font-size: 30px;
+        margin-top: 80px;
+    }
+    .content p{
+        font-family: 'Edu VIC WA NT Beginner', cursive;
+        font-weight: bold;
+        margin: 10px auto;
+        font-weight: 100;
+        line-height: 25px;
+        font-size: 10px;
+        padding-bottom: 5%;
+    }
+    .col-2 img{
+        width: 50%;
+        position: absolute;
+        left: 25%;
+        bottom: 0;
+        transform: translateY(-50%);
+        transition: bottom 1s, left 1s;
+    }
+    .col-2:hover .pizzas{
+        left: 20%;
+    }
+
+    .about h4{
+        font-size: 30px;
+        padding-bottom: 10px;
+    }
+    .about p{
+        padding: 10px;
+        justify-content: space-between;
+        letter-spacing: 1px;
+        line-height: 30px;
+        word-spacing: 1px;
+        font-size: 9px;
+    }
+
+    .arrow{
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        transform: translate(-40%, -40%);
+    }
+    .arrow .arow{
+        display: flex;
+        width: 10px;
+        height: 10px;
+        border-bottom: 3px solid violet;
+        border-right: 3px solid violet;
+        transform: rotate(45deg);
+        margin: -5px;
+        animation: scroll 2s infinite;
+    }
+
+    .outer-footer p{
+        text-transform: uppercase;
+        bottom: 0;
+        font-size: 7px;
+        color: white;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+    }
+}
